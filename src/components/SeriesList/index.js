@@ -3,9 +3,11 @@ import Series from '../../containers/Series';
 import './index.css';
 
 const SeriesListItem = ({ series }) => (
+  <div>
     <li key={series.show.id}>
       {series.show.name}
     </li>
+  </div>
 )
 
 const SeriesList = (props) => {

@@ -14,7 +14,7 @@ const SeriesList = (props) => {
       <ul className="series-list">
       {props.list.map(series => {
         return (
-          <SeriesListItem series={ series } />
+          <SeriesListItem series={ series } key={series.show.id}/>
           )
       })}
       </ul>

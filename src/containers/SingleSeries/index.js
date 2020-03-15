@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Loader from '../../components/Loader';
-
+import ShowDetails from '../../components/ShowDetails';
 class SingleSeries extends Component {
   state = {
     show: null,
@@ -26,19 +26,10 @@ class SingleSeries extends Component {
         {
           show !== null &&
           <div>
-          <p>Name: {show.name.toUpperCase()}</p>
-          <p>Premier: {show.premiered}</p>
-          <p>Rating: {show.rating.average}</p>
-          <p>Episodes: {show._embedded.episodes.length}</p>
-          <p>
-            <img alt="show image" src={show.image.original}/>
-          </p>
-          <p>Summary: {show.summary.replace(/<p>|<b>|<i>|<\/p>|<\/b>|<\/i>/g, "")}</p>
+            <ShowDetails detail={ this.state.show }/>
           </div>
         }
-        {
 
-        }
       </div>
     )
   }

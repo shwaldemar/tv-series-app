@@ -1,27 +1,26 @@
-import React, {Component} from 'react';
-import Series from '../../containers/Series';
-import './index.css';
+import React from 'react';
+import './index.css'
+import { Link } from 'react-router-dom';
 
 const SeriesListItem = ({ series }) => (
-  <div>
-    <li key={series.show.id}>
-      {series.show.name}
-    </li>
-  </div>
-)
+    <li>
+      <Link to={`/series/${series.show.id}`}>
+        {series.show.name}
+      </Link>
+    </li>/*series is a prop passed from SeriesList*/
+  )
 
 const SeriesList = (props) => {
   return (
-    <div>
-      <ul className="series-list">
-      {props.list.map(series => {
-        return (
-          <SeriesListItem series={ series } key={series.show.id}/>
+    <div>{/*Series List Component*/}
+      <ul className='series-list'>
+        {props.list.map(series => {
+          return (
+            <SeriesListItem series={series} key={series.show.id}/> /*series is a prop to pass to other components*/
           )
-      })}
+        })}
       </ul>
     </div>
   )
 }
-
-export default SeriesList;
+export default SeriesList

@@ -1,13 +1,13 @@
 import React from 'react';
 import loaderSrc from '../assets/loading.jpg';
 
-const Loader = (props) => {
-  return (
-  <div>
-    <img
-    style={"width: 75px"}
-    alt="loading..."
-    src={loaderSrc}/>
-  </div>)
-}
+const Loader = (props) => (
+    <div>
+      <img
+      style={{width: 75}}
+      alt="Loading..."
+      src={loaderSrc}/>
+    </div>
+  )
+
 export default Loader;

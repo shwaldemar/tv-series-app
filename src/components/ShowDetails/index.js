@@ -4,7 +4,12 @@ const ShowDetails = (props) => {
   const show = props.detail;
     return (
       <div>
-        <p>Name: {show.name.toUpperCase()}</p>
+        <p>Name: {
+          show.name.split(' ')
+  .map(word => {
+    return word[0].toUpperCase() + word.slice(1, word.length)
+  })
+        }</p>
         <p>Premier: {show.premiered}</p>
         <p>Rating: {show.rating.average}</p>
         <p>Episodes: {show._embedded.episodes.length}</p>

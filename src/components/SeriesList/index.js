@@ -5,7 +5,12 @@ import { Link } from 'react-router-dom';
 const SeriesListItem = ({ series }) => (
     <li>
       <Link to={`/series/${series.show.id}`}>
-        {series.show.name}
+        {
+          series.show.name.split(' ')
+            .map(word => {
+              return word[0].toUpperCase() + word.slice(1, word.length)
+            })
+        }
       </Link>
     </li>/*series is a prop passed from SeriesList*/
   )

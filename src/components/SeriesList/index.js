@@ -8,7 +8,7 @@ const SeriesListItem = ({ series }) => (
         {
           series.show.name.split(' ')
             .map(word => {
-              return word[0].toUpperCase() + word.slice(1, word.length)
+              return word[0].toUpperCase() + word.slice(1, word.length) + " "
             })
         }
       </Link>
